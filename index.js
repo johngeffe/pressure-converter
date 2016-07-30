@@ -3,6 +3,12 @@ var factors = {
     "atm": 0.98692326671601,
     "bar (b)": 1,
     "b": 1,
+    "bar": 1,
+    "millibar": 1000,
+    "mBar": 1000,
+    "pascal (Pa)": 100000,
+    "Pa": 100000,
+    "pa": 100000,
     "hectopascal (hPa)": 1000,
     "hPa": 1000,
     "kilogram per sq. cm (kgf/cm²)": 1.0197162129779,
@@ -11,12 +17,8 @@ var factors = {
     "kgf/m²": 10197.162129779,
     "kilopascal (kPa)": 100,
     "kPa": 100,
-    "millibar": 1000,
-    "mBar": 1000,
     "millimeter of mercury (mmHg)": 750.06168270417,
     "mmHg": 750.06168270417,
-    "pascal (Pa)": 100000,
-    "Pa": 100000,
     "pounds per square foot (psf)": 2088.5456325465,
     "psf": 2088.5456325465,
     "pounds per square inch (psi)": 14.503789114906,
@@ -90,11 +92,12 @@ module.exports.convertPressure = function(options) {
     w1 = options.fromUnits;
     w2 = options.toUnits;
     val = options.value;
-    faqsorg = factors[w1] / factors[w2];
+    faqsorg = factors[w2] / factors[w1];
     resfaqs = val * faqsorg;
     if (isNaN(parseFloat(resfaqs))) {
-        return ''
+        return val + ' ' + w1 + ' ' + w2;
     } else {
-        return fix(parseFloat(resfaqs)) + ' ';
+        return fix(parseFloat(resfaqs));
     }
+
 };
