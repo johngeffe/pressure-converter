@@ -1,0 +1,27 @@
+{
+  "name": "pressure-converter",
+  "version": "0.0.1",
+  "description": "convert pressure units",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johngeffe/pressure-converter.git"
+  },
+  "keywords": [
+    "pressure",
+    "convert"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/johngeffe/pressure-converter/issues"
+  },
+  "homepage": "https://github.com/johngeffe/pressure-converter#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3"
+  }
+}
